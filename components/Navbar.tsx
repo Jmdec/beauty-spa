@@ -34,7 +34,7 @@ export function Navbar() {
             className="font-display font-semibold text-base hidden sm:inline tracking-wide"
             style={{ color: '#3D2817' }}
           >
-            Hi Beauty
+            Hi Beauty SPA
           </span>
         </Link>
 
