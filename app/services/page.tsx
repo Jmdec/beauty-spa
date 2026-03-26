@@ -495,7 +495,7 @@ export default function ServicesPage() {
         >
           <span className="sp-cat-tile__icon">✿</span>
           <span className="sp-cat-tile__name">All</span>
-          <span className="sp-cat-tile__desc">Everything</span>
+          {/* <span className="sp-cat-tile__desc">Everything</span> */}
           <span className="sp-cat-tile__underline" aria-hidden="true" />
         </button>
 
