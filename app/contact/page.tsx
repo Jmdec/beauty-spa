@@ -27,15 +27,52 @@ export default function ContactPage() {
     subject: "",
     message: "",
   })
+  const [phoneError, setPhoneError] = useState("")
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
+
+    if (name === "phone") {
+      // Strip non-digits
+      const digitsOnly = value.replace(/\D/g, "")
+      setFormData((prev) => ({ ...prev, phone: digitsOnly }))
+
+      // Validate
+      if (digitsOnly.length > 0 && !digitsOnly.startsWith("09")) {
+        setPhoneError("Phone number must start with 09")
+      } else if (digitsOnly.length > 11) {
+        // Don't update beyond 11 digits
+        return
+      } else if (digitsOnly.length === 11 && !digitsOnly.startsWith("09")) {
+        setPhoneError("Phone number must start with 09")
+      } else {
+        setPhoneError("")
+      }
+      return
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const validatePhone = (): boolean => {
+    const phone = formData.phone
+    if (!phone.startsWith("09")) {
+      setPhoneError("Phone number must start with 09")
+      return false
+    }
+    if (phone.length !== 11) {
+      setPhoneError("Phone number must be exactly 11 digits")
+      return false
+    }
+    setPhoneError("")
+    return true
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!validatePhone()) return
+
     setStatus('loading')
     try {
       const res = await fetch('/api/contact', {
@@ -46,6 +83,7 @@ export default function ContactPage() {
       if (!res.ok) throw new Error('Failed')
       setStatus('success')
       setFormData({ name: "", phone: "", subject: "", message: "" })
+      setPhoneError("")
     } catch (err) {
       console.error(err)
       setStatus('error')
@@ -54,7 +92,7 @@ export default function ContactPage() {
 
   return (
     <MainLayout>
-      {/* HERO — unchanged */}
+      {/* HERO */}
       <section
         className="relative pt-32 pb-20 overflow-hidden"
         style={{ background: `linear-gradient(105deg, ${BRAND.heroGradientFrom} 0%, ${BRAND.heroGradientTo} 60%)` }}
@@ -79,7 +117,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* VALUE STRIP — unchanged */}
+      {/* VALUE STRIP */}
       <section className="py-10 border-y" style={{ borderColor: BRAND.border, background: BRAND.bg }}>
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
           {[["1,000+", "Happy Clients"], ["24/7", "Message Support Window"], ["< 2 hrs", "Average Response Time"]].map(([stat, label], i) => (
@@ -108,7 +146,6 @@ export default function ContactPage() {
               Tell us what you need and we'll respond as soon as possible.
             </p>
 
-            {/* SUCCESS */}
             {status === 'success' && (
               <div className="mb-5 flex items-center gap-2 p-4 rounded-xl text-sm" style={{ background: '#f0fdf4', color: '#166534', border: '1px solid #bbf7d0' }}>
                 <CheckCircle size={16} />
@@ -116,7 +153,6 @@ export default function ContactPage() {
               </div>
             )}
 
-            {/* ERROR */}
             {status === 'error' && (
               <div className="mb-5 p-4 rounded-xl text-sm" style={{ background: '#fef2f2', color: '#991b1b', border: '1px solid #fecaca' }}>
                 Something went wrong. Please try again or call us directly.
@@ -126,8 +162,29 @@ export default function ContactPage() {
             <form className="grid gap-5" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-4">
                 <Input name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
-                <Input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required />
+
+                <div className="flex flex-col gap-1">
+                  <Input
+                    name="phone"
+                    placeholder="09XXXXXXXXX"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    inputMode="numeric"
+                    maxLength={11}
+                    style={phoneError ? { borderColor: '#dc2626' } : {}}
+                  />
+                  {phoneError && (
+                    <p className="text-xs" style={{ color: '#dc2626' }}>{phoneError}</p>
+                  )}
+                  {!phoneError && formData.phone.length > 0 && (
+                    <p className="text-xs" style={{ color: BRAND.muted }}>
+                      {formData.phone.length}/11 digits
+                    </p>
+                  )}
+                </div>
               </div>
+
               <Input name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} required />
               <textarea
                 name="message"
@@ -156,7 +213,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* RIGHT - INFO — unchanged */}
+          {/* RIGHT - INFO */}
           <div className="grid gap-6">
             <div className="grid sm:grid-cols-2 gap-6">
               {[
@@ -192,7 +249,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ — unchanged */}
+      {/* FAQ */}
       <section className="py-16 border-t" style={{ background: BRAND.bg, borderColor: BRAND.border }}>
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-center mb-3" style={{ color: BRAND.muted }}>Support</p>
@@ -214,7 +271,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* MAP — unchanged */}
+      {/* MAP */}
       <section className="px-6 pb-20" style={{ background: BRAND.surface }}>
         <div className="max-w-7xl mx-auto">
           <div className="rounded-3xl overflow-hidden shadow-2xl" style={{ border: `1px solid ${BRAND.border}` }}>
@@ -223,7 +280,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FINAL CTA — unchanged */}
+      {/* FINAL CTA */}
       <section className="py-16 relative overflow-hidden" style={{ background: `linear-gradient(105deg, ${BRAND.heroGradientFrom} 0%, ${BRAND.heroGradientTo} 60%)` }}>
         <div className="max-w-5xl mx-auto px-6 text-center relative">
           <p className="text-xs uppercase tracking-[0.3em] mb-4" style={{ color: BRAND.muted }}>Limited Availability</p>

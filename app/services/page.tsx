@@ -153,24 +153,27 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
-export default function ServicesPage() {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+// 'all' means show everything grouped by category (original behaviour)
+// any other value shows only that category's services in a flat grid
+type ActiveCategory = 'all' | string
 
-  const filteredServices = useMemo(() =>
-    allServices.filter((s) => {
-      const q = searchTerm.toLowerCase()
-      return (!q || s.title.toLowerCase().includes(q) || s.description.toLowerCase().includes(q))
-          && (selectedCategories.length === 0 || selectedCategories.includes(s.category))
-    }),
-    [searchTerm, selectedCategories]
-  )
+export default function ServicesPage() {
+  const [searchTerm, setSearchTerm]       = useState('')
+  const [activeCategory, setActiveCategory] = useState<ActiveCategory>('all')
 
   const categories = Array.from(new Set(allServices.map((s) => s.category)))
-  const toggleCat = (cat: string) =>
-    setSelectedCategories((p) => p.includes(cat) ? p.filter((c) => c !== cat) : [...p, cat])
 
-  const isFiltered = selectedCategories.length > 0 || Boolean(searchTerm)
+  const filteredServices = useMemo(() => {
+    const q = searchTerm.toLowerCase()
+    return allServices.filter((s) => {
+      const matchesSearch = !q || s.title.toLowerCase().includes(q) || s.description.toLowerCase().includes(q)
+      const matchesCat    = activeCategory === 'all' || s.category === activeCategory
+      return matchesSearch && matchesCat
+    })
+  }, [searchTerm, activeCategory])
+
+  // When a category is active we always show a flat filtered grid
+  const isFiltered = activeCategory !== 'all' || Boolean(searchTerm)
 
   return (
     <MainLayout>
@@ -178,7 +181,6 @@ export default function ServicesPage() {
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
 
         :root {
-          /* ── Dark Sienna #7A3828 · Peachy Blush #F9EDE6 ── */
           --page-bg:     #F9EDE6;
           --surface:     #FDF5EF;
           --surface-alt: #F0DDD3;
@@ -250,7 +252,9 @@ export default function ServicesPage() {
 
         /* ── category strip ── */
         .sp-cat-strip {
-          display: grid; grid-template-columns: repeat(8, 1fr);
+          display: grid;
+          /* 9 columns: All + 8 categories */
+          grid-template-columns: repeat(9, 1fr);
           border-top: 1px solid var(--brand-b); border-bottom: 1px solid var(--brand-b);
           background: var(--surface-alt); overflow-x: auto;
         }
@@ -258,7 +262,7 @@ export default function ServicesPage() {
           position: relative; padding: 20px 8px 18px; text-align: center;
           cursor: pointer; border-right: 1px solid var(--brand-b);
           background: transparent; transition: background 0.2s;
-          min-width: 108px; font-family: var(--ff-b); border-bottom: none;
+          min-width: 100px; font-family: var(--ff-b); border-bottom: none;
           display: flex; flex-direction: column; align-items: center; gap: 4px;
         }
         .sp-cat-tile:last-child { border-right: none; }
@@ -302,13 +306,6 @@ export default function ServicesPage() {
           padding: 4px; display: flex; transition: color 0.15s;
         }
         .sp-search__x:hover { color: var(--dark); }
-        .sp-clear-btn {
-          background: none; border: 1px solid var(--brand-b); cursor: pointer;
-          font-family: var(--ff-b); font-size: 11px; color: var(--brand);
-          padding: 7px 14px; border-radius: 20px;
-          display: flex; align-items: center; gap: 5px; transition: all 0.15s;
-        }
-        .sp-clear-btn:hover { background: var(--brand-tint); }
         .sp-count { font-family: var(--ff-b); font-size: 12.5px; color: var(--muted); margin-left: auto; }
         .sp-count strong { color: var(--dark); font-weight: 500; }
 
@@ -436,22 +433,24 @@ export default function ServicesPage() {
         .sp-empty__btn:hover { background: var(--mid); }
 
         /* ── responsive ── */
-        @media (max-width: 960px) {
-          .sp-cat-strip { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 1100px) {
+          .sp-cat-strip { grid-template-columns: repeat(5, 1fr); }
           .sp-cat-tile { border-bottom: 1px solid var(--brand-b); }
-          .sp-cat-tile:nth-child(4n) { border-right: none; }
-          .sp-cat-tile:nth-child(n+5) { border-bottom: none; }
+          .sp-cat-tile:nth-child(5n) { border-right: none; }
         }
-        @media (max-width: 580px) {
-          .sp-cat-strip { grid-template-columns: repeat(2, 1fr); }
-          .sp-cat-tile:nth-child(2n) { border-right: none; }
+        @media (max-width: 760px) {
+          .sp-cat-strip { grid-template-columns: repeat(3, 1fr); }
+          .sp-cat-tile:nth-child(3n) { border-right: none; }
           .sp-cat-tile:nth-child(n+7) { border-bottom: none; }
+        }
+        @media (max-width: 500px) {
+          .sp-cat-strip { grid-template-columns: repeat(3, 1fr); }
           .sp-grid { grid-template-columns: 1fr; }
           .sp-hero { padding: 64px 16px 48px; }
           .sp-controls, .sp-grid-wrap, .sp-sec-head { padding-left: 16px; padding-right: 16px; }
           .sp-count { display: none; }
         }
-        @media (min-width: 581px) and (max-width: 900px) {
+        @media (min-width: 501px) and (max-width: 900px) {
           .sp-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -484,16 +483,32 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── Category Strip ── */}
-      <div className="sp-cat-strip" role="group" aria-label="Filter by category">
+      {/* ── Category Strip — radio-style: All + one per category ── */}
+      <div className="sp-cat-strip" role="radiogroup" aria-label="Filter by category">
+
+        {/* ALL tile */}
+        <button
+          className={`sp-cat-tile ${activeCategory === 'all' ? 'active' : ''}`}
+          onClick={() => setActiveCategory('all')}
+          role="radio"
+          aria-checked={activeCategory === 'all'}
+        >
+          <span className="sp-cat-tile__icon">✿</span>
+          <span className="sp-cat-tile__name">All</span>
+          <span className="sp-cat-tile__desc">Everything</span>
+          <span className="sp-cat-tile__underline" aria-hidden="true" />
+        </button>
+
+        {/* One tile per category */}
         {categories.map((cat) => {
           const cfg = categoryConfig[cat]
           return (
             <button
               key={cat}
-              className={`sp-cat-tile ${selectedCategories.includes(cat) ? 'active' : ''}`}
-              onClick={() => toggleCat(cat)}
-              aria-pressed={selectedCategories.includes(cat)}
+              className={`sp-cat-tile ${activeCategory === cat ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat)}
+              role="radio"
+              aria-checked={activeCategory === cat}
             >
               <span className="sp-cat-tile__icon">{cfg.icon}</span>
               <span className="sp-cat-tile__name">{cfg.label}</span>
@@ -521,11 +536,6 @@ export default function ServicesPage() {
             </button>
           )}
         </div>
-        {selectedCategories.length > 0 && (
-          <button className="sp-clear-btn" onClick={() => setSelectedCategories([])}>
-            <X size={11} /> Clear filters
-          </button>
-        )}
         <p className="sp-count">
           Showing <strong>{filteredServices.length}</strong> of {allServices.length} services
         </p>
@@ -533,6 +543,7 @@ export default function ServicesPage() {
 
       {/* ── Services ── */}
       {!isFiltered ? (
+        /* ALL view — grouped by category */
         <>
           {categories.map((cat, ci) => {
             const catSvcs = filteredServices.filter((s) => s.category === cat)
@@ -556,6 +567,7 @@ export default function ServicesPage() {
           })}
         </>
       ) : (
+        /* Filtered view — flat grid */
         <div className="sp-grid-wrap last">
           <div className="sp-grid">
             {filteredServices.length > 0 ? (
@@ -564,9 +576,12 @@ export default function ServicesPage() {
               <div className="sp-empty">
                 <div className="sp-empty__g">✦</div>
                 <h3 className="sp-empty__h">Nothing found</h3>
-                <p className="sp-empty__p">Try a different term or clear your filters.</p>
-                <button className="sp-empty__btn" onClick={() => { setSearchTerm(''); setSelectedCategories([]) }}>
-                  <X size={12} /> Clear all
+                <p className="sp-empty__p">Try a different term or select another category.</p>
+                <button
+                  className="sp-empty__btn"
+                  onClick={() => { setSearchTerm(''); setActiveCategory('all') }}
+                >
+                  <X size={12} /> Show all
                 </button>
               </div>
             )}
