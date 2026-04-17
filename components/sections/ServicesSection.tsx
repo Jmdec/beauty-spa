@@ -8,7 +8,7 @@ const treatments = [
     id: 1,
     duration: '90 MIN',
     name: 'Hot Stone Massage',
-    price: '₱2,799',
+    price: '₱1,699',
     image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80',
   },
   {
@@ -29,7 +29,7 @@ const treatments = [
     id: 4,
     duration: '100 MIN',
     name: 'Head · Shoulder · Facial',
-    price: '₱1,999',
+    price: '₱1,199',
     image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80',
   },
   {
