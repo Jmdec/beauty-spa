@@ -20,7 +20,6 @@ export function Footer() {
       {/* MAIN */}
       <div className="relative max-w-7xl mx-auto px-4 md:px-8 pt-14 pb-8">
 
-       
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-10">
 
@@ -33,7 +32,6 @@ export function Footer() {
                 alt="Hi Beauty Spa Logo"
                 className="w-11 h-11 object-contain"
               />
-
               <div>
                 <p className="font-bold tracking-tight text-base leading-tight">
                   Hi Beauty Spa
@@ -71,7 +69,7 @@ export function Footer() {
                 { href: 'https://www.instagram.com/beautyasha888/', Icon: Instagram, label: 'Instagram' },
                 { href: 'https://www.tiktok.com/@hibeautyspa888', Icon: TikTokIcon, label: 'TikTok' },
               ].map(({ href, Icon, label }) => (
-                <a
+                
                   key={label}
                   href={href}
                   target="_blank"
@@ -97,7 +95,10 @@ export function Footer() {
                 <Phone size={13} className="text-[#c97c5d] mt-1" />
                 <div>
                   <p className="text-[10px] text-spa-dark/50 uppercase">Phone</p>
-                  <a href="tel:+639684504504" className="text-xs hover:text-[#c97c5d] transition">
+                  
+                    href="tel:+639684504504"
+                    className="text-xs hover:text-[#c97c5d] transition"
+                  >
                     0968 450 4504
                   </a>
                 </div>
@@ -107,7 +108,12 @@ export function Footer() {
                 <Instagram size={13} className="text-[#c97c5d] mt-1" />
                 <div>
                   <p className="text-[10px] text-spa-dark/50 uppercase">Instagram</p>
-                  <a href="https://www.instagram.com/beautyasha888/" className="text-xs hover:text-[#c97c5d] transition">
+                  
+                    href="https://www.instagram.com/beautyasha888/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs hover:text-[#c97c5d] transition"
+                  >
                     @beautyasha888
                   </a>
                 </div>
@@ -117,7 +123,12 @@ export function Footer() {
                 <Facebook size={13} className="text-[#c97c5d] mt-1" />
                 <div>
                   <p className="text-[10px] text-spa-dark/50 uppercase">Facebook</p>
-                  <a href="https://www.facebook.com/people/HI-BeautySPA/61564870212732/" className="text-xs hover:text-[#c97c5d] transition">
+                  
+                    href="https://www.facebook.com/people/HI-BeautySPA/61564870212732/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs hover:text-[#c97c5d] transition"
+                  >
                     hibeauty_1188
                   </a>
                 </div>
@@ -136,10 +147,14 @@ export function Footer() {
               <MapPin size={13} className="text-[#c97c5d] mt-1" />
               <div>
                 <p className="text-[10px] text-spa-dark/50 uppercase">Location</p>
-                <p className="text-xs text-spa-dark/80">
-                  Antel Spa Residences<br />
-                  Makati Avenue, Makati City
-                </p>
+                
+                  href="https://maps.google.com/?q=4F+Antel+Spa+Residences+7829+Salamanca+Makati+City"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-spa-dark/80 hover:text-[#c97c5d] transition"
+                >
+                  4/F, Antel Spa Residences, 7829 Salamanca, Makati City
+                </a>
               </div>
             </div>
 
@@ -165,7 +180,7 @@ export function Footer() {
 
           <p className="text-[11px] text-spa-dark/50">
             Powered by{" "}
-            <a
+            
               href="https://www.infinitechphil.com"
               target="_blank"
               rel="noopener noreferrer"
