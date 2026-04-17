@@ -23,85 +23,66 @@ const allServices: Service[] = [
   // FASHION GODDESS
   { id: 'FG1', title: 'Manicure', description: '修手 — Professional nail care and shaping for your hands.', image: '', priceRange: { min: 300, max: 300 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'manicure', category: 'fashion' },
   { id: 'FG2', title: 'Pedicure', description: '修脚 — Professional nail care and shaping for your feet.', image: '', priceRange: { min: 300, max: 300 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'pedicure', category: 'fashion' },
-  { id: 'FG3', title: 'Fingers Monochrome + Reinforcement', description: '手甲含护理 — Full nail color with protective reinforcement treatment.', image: '', priceRange: { min: 1600, max: 1600 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'fingers-monochrome-reinforcement', category: 'fashion' },
-  { id: 'FG4', title: 'Foot SPA', description: '足部护理 — Relaxing and nourishing foot spa treatment.', image: '', priceRange: { min: 600, max: 600 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'foot-spa', category: 'fashion' },
-  { id: 'FG5', title: 'Foot Fingers Monochrome', description: '脚甲含护理 — Full nail color for feet with complete care.', image: '', priceRange: { min: 2500, max: 2500 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'foot-fingers-monochrome', category: 'fashion' },
-  { id: 'FG6', title: 'Beauty Eyelashes', description: '美睫 — Professional eyelash enhancement treatment.', image: '', priceRange: { min: 3500, max: 3500 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'beauty-eyelashes', category: 'fashion' },
+  { id: 'FG3', title: 'Foot SPA', description: '足部护理 — Relaxing and nourishing foot spa treatment.', image: '', priceRange: { min: 600, max: 600 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'foot-spa', category: 'fashion' },
+  { id: 'FG6', title: 'Foot Nails (Including Foot Spa)', description: '脚甲美化含足疗 — Nail beautification for feet inclusive of foot spa care.', image: '', priceRange: { min: 1200, max: 1200 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'foot-nails-including-foot-spa', category: 'fashion' },
+  { id: 'FG5', title: 'Fingers Monochrom with Cleaning', description: '指甲单色含清洁 — Full nail color for fingers with complete cleaning care.', image: '', priceRange: { min: 1200, max: 1200 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'fingers-monochrom-with-cleaning', category: 'fashion' },
   // SKIN CARE
-  { id: 'F1', title: 'Water SPA', description: '瀑布水疗 — Hydrating waterfall-inspired spa therapy.', image: '', priceRange: { min: 599, max: 599 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'water-spa', category: 'skincare' },
-  { id: 'F2', title: 'Eye Care SPA', description: '眼部SPA — Revitalizing spa treatment focused on the eye area.', image: '', priceRange: { min: 599, max: 599 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'eye-care-spa', category: 'skincare' },
-  { id: 'F3', title: 'Facial Plastic Ribs', description: '面部拨筋 — Facial muscle-release technique for a lifted look.', image: '', priceRange: { min: 1199, max: 1199 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'facial-plastic-ribs', category: 'skincare' },
-  { id: 'F4', title: 'Facial Aroma Spa', description: '面部芳香SPA — Aromatherapy facial spa for deep relaxation.', image: '', priceRange: { min: 1299, max: 1299 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'facial-aroma-spa', category: 'skincare' },
-  { id: 'F5', title: 'Nano Deep Cleaning', description: '纳米毛孔净化 — Advanced nano technology for deep pore purification.', image: '', priceRange: { min: 1599, max: 1599 }, rating: 4.8, reviewCount: 0, duration: '40 min', slug: 'nano-deep-cleaning', category: 'skincare' },
-  { id: 'F6', title: 'Skin Deep Cleaning', description: '深度肌底净化养护 — Comprehensive deep skin cleansing and nourishing.', image: '', priceRange: { min: 2999, max: 2999 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'skin-deep-cleaning', category: 'skincare' },
-  { id: 'F7', title: 'Bulb Skin Treatment', description: '灯泡肌 — Light-based treatment for glowing, luminous skin. Multi-session: ₱12,000 / 4 sessions.', image: '', priceRange: { min: 3500, max: 3500 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'bulb-skin-treatment', category: 'skincare' },
-  { id: 'F8', title: 'Acne Care Treatment', description: '微晶祛痘 — Microcrystal acne treatment for clearer skin. Multi-session: ₱12,000 / 4 sessions.', image: '', priceRange: { min: 3500, max: 3500 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'acne-care-treatment', category: 'skincare' },
-  { id: 'F9', title: 'Water Booster', description: '微晶水光 — Microcrystal hydration booster for plump, dewy skin. Multi-session: ₱14,000 / 4 sessions.', image: '', priceRange: { min: 4000, max: 4000 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'water-booster', category: 'skincare' },
-  { id: 'F10', title: 'MTS Embryo', description: 'MTS中胚养护 — Mesotherapy-inspired stem cell nourishing treatment. Multi-session: ₱15,000 / 4 sessions.', image: '', priceRange: { min: 4500, max: 4500 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'mts-embryo', category: 'skincare' },
-  { id: 'F11', title: 'Carbon Spectra Peel', description: '黑脸娃娃 — Carbon laser peel for deep cleansing and skin renewal. Multi-session: ₱15,000 / 4 sessions.', image: '', priceRange: { min: 4500, max: 4500 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'carbon-spectra-peel', category: 'skincare' },
-  { id: 'F12', title: 'Photorejuvenation', description: '光子嫩肤 — IPL light therapy for skin tone and texture. Multi-session: ₱15,000 / 4 sessions.', image: '', priceRange: { min: 4500, max: 4500 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'photorejuvenation', category: 'skincare' },
-  { id: 'F13', title: '7D Anti-aging', description: '7D抗衰紧致 — Premium 7D lifting and firming anti-aging treatment. Multi-session: ₱34,000 / 4 sessions.', image: '', priceRange: { min: 14000, max: 14000 }, rating: 4.9, reviewCount: 0, duration: '', slug: '7d-anti-aging', category: 'skincare' },
+  { id: 'K1', title: 'Skin Deep Facial Cleansing', description: '深度肌底净化养护 — Comprehensive deep skin cleansing and nourishing.', image: '', priceRange: { min: 1299, max: 1299 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'skin-deep-cleaning', category: 'skincare' },
+  { id: 'K2', title: 'Water SPA', description: '瀑布水疗 — Hydrating waterfall-inspired spa therapy.', image: '', priceRange: { min: 599, max: 599 }, rating: 4.8, reviewCount: 0, duration: '40 min', slug: 'water-spa', category: 'skincare' },
+  { id: 'K3', title: 'Eye Care SPA', description: '眼部SPA护理 — Revitalizing spa treatment focused on the eye area.', image: '', priceRange: { min: 599, max: 599 }, rating: 4.8, reviewCount: 0, duration: '40 min', slug: 'eye-care-spa', category: 'skincare' },
+  { id: 'K4', title: 'Facial Plastic Ribs', description: '面部拨筋提拉 — Facial muscle-release technique for a lifted look.', image: '', priceRange: { min: 1199, max: 1199 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'facial-plastic-ribs', category: 'skincare' },
+  { id: 'K5', title: 'Face Massage', description: '面部芳香SPA — Aromatic facial massage for deep relaxation.', image: '', priceRange: { min: 899, max: 899 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'face-massage', category: 'skincare' },
   // DETOX
-  { id: 'M1', title: 'Moxibustion Therapy', description: '养生艾灸 — Traditional Chinese moxibustion for warmth and healing.', image: '', priceRange: { min: 599, max: 599 }, rating: 4.7, reviewCount: 0, duration: '', slug: 'moxibustion-therapy', category: 'detox' },
-  { id: 'M2', title: 'Sauna', description: '桑拿 — Traditional sauna session to detox and relax the body.', image: '', priceRange: { min: 599, max: 599 }, rating: 4.7, reviewCount: 0, duration: '', slug: 'sauna', category: 'detox' },
-  { id: 'M3', title: 'Scraping', description: '刮痧 — Traditional Gua Sha scraping to release tension and toxins.', image: '', priceRange: { min: 499, max: 499 }, rating: 4.7, reviewCount: 0, duration: '', slug: 'scraping', category: 'detox' },
-  { id: 'M4', title: 'Cupping', description: '拔火罐 — Fire cupping therapy to improve circulation and relieve pain.', image: '', priceRange: { min: 499, max: 499 }, rating: 4.7, reviewCount: 0, duration: '', slug: 'cupping', category: 'detox' },
-  // VITALITY
-  { id: 'M5', title: 'Beech', description: '桦木疏通 — Birch wood meridian clearing for improved energy flow.', image: '', priceRange: { min: 499, max: 499 }, rating: 4.7, reviewCount: 0, duration: '', slug: 'beech', category: 'vitality' },
-  { id: 'M6', title: 'Body Scrub', description: '全身去角质 — Full body exfoliation for smooth, refreshed skin.', image: '', priceRange: { min: 899, max: 899 }, rating: 4.7, reviewCount: 0, duration: '', slug: 'body-scrub', category: 'vitality' },
-  { id: 'M7', title: 'Clean Ear', description: '古法采耳 — Traditional Chinese ear cleaning and relaxation therapy.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.7, reviewCount: 0, duration: '', slug: 'clean-ear', category: 'vitality' },
-  { id: 'M8', title: 'Gua Sha With Moxibustion', description: '艾灸刮痧 — Combined Gua Sha and moxibustion for deep warmth and release.', image: '', priceRange: { min: 599, max: 599 }, rating: 4.7, reviewCount: 0, duration: '', slug: 'gua-sha-moxibustion', category: 'vitality' },
-  // AROMATHERAPY
-  { id: 'M9', title: 'Ordinary Massage', description: '指压 — Classic acupressure massage for full-body relief. +30 min add-on available for ₱799.', image: '', priceRange: { min: 999, max: 999 }, rating: 4.7, reviewCount: 0, duration: '60 min', slug: 'ordinary-massage', category: 'aromatherapy' },
-  { id: 'M10', title: 'Shoulder Massage', description: '肩颈理疗 — Targeted therapeutic massage for neck and shoulders.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.7, reviewCount: 0, duration: '30 min', slug: 'shoulder-massage', category: 'aromatherapy' },
-  { id: 'M11', title: 'Thai Massage', description: '泰式按摩 — Traditional Thai stretching and pressure massage.', image: '', priceRange: { min: 1199, max: 1199 }, rating: 4.7, reviewCount: 0, duration: '60 min', slug: 'thai-massage', category: 'aromatherapy' },
-  { id: 'M12', title: 'Body Oil Massage', description: '全身精油按摩 — Full-body essential oil massage for deep relaxation.', image: '', priceRange: { min: 1499, max: 1499 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'body-oil-massage', category: 'aromatherapy' },
-  { id: 'M13', title: 'Meridians Massage', description: '全身经络SPA — Full-body meridian SPA to balance energy channels.', image: '', priceRange: { min: 1999, max: 1999 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'meridians-massage', category: 'aromatherapy' },
-  { id: 'M14', title: 'Oil Moxibustion Massage', description: '艾灸推油 — Moxibustion combined with oil massage for warmth and flow.', image: '', priceRange: { min: 1999, max: 1999 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'oil-moxibustion-massage', category: 'aromatherapy' },
-  { id: 'M15', title: 'Back Massage', description: '精油开背 — Essential oil back massage for tension and stress relief.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.7, reviewCount: 0, duration: '30 min', slug: 'back-massage', category: 'aromatherapy' },
-  // WELLNESS
-  { id: 'M16', title: 'Abdomen Massage', description: '腹部暖宫保养 — Warming abdominal massage for uterine and digestive care.', image: '', priceRange: { min: 1199, max: 1199 }, rating: 4.7, reviewCount: 0, duration: '30 min', slug: 'abdomen-massage', category: 'wellness' },
-  { id: 'M17', title: 'Leg Massage', description: '腿部调理 — Therapeutic leg massage for circulation and relief.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.7, reviewCount: 0, duration: '30 min', slug: 'leg-massage', category: 'wellness' },
-  { id: 'M18', title: 'Kidney Massage', description: '肾部保养 — Kidney-area massage for vitality and lower back support.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.7, reviewCount: 0, duration: '30 min', slug: 'kidney-massage', category: 'wellness' },
-  { id: 'M19', title: 'Breast Massage', description: '乳腺疏通 — Lymphatic breast massage for drainage and wellness.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '40 min', slug: 'breast-massage', category: 'wellness' },
-  { id: 'M21', title: 'Foot Massage', description: '足疗 — Traditional foot reflexology massage for full-body balance.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'foot-massage', category: 'wellness' },
-  { id: 'M22', title: 'Hot Stone Massage', description: '热石按摩 — Heated stone massage to melt away deep muscle tension.', image: '', priceRange: { min: 2799, max: 2799 }, rating: 4.9, reviewCount: 0, duration: '90 min', slug: 'hot-stone-massage', category: 'wellness' },
-  // SLEEP & CALM
-  { id: 'M23', title: 'Shampoo', description: '头疗洗头 — Relaxing scalp cleanse and wash treatment.', image: '', priceRange: { min: 699, max: 699 }, rating: 4.6, reviewCount: 0, duration: '30 min', slug: 'shampoo', category: 'sleep' },
-  { id: 'M24', title: 'Shampoo + Head Massage', description: '养生头疗 — Scalp cleanse paired with a soothing head massage.', image: '', priceRange: { min: 1499, max: 1499 }, rating: 4.7, reviewCount: 0, duration: '60 min', slug: 'shampoo-head-massage', category: 'sleep' },
-  { id: 'M25', title: 'Head + Shoulder Ginger', description: '头疗+肩颈姜疗 — Head therapy with warming ginger shoulder treatment.', image: '', priceRange: { min: 1999, max: 1999 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'head-shoulder-ginger', category: 'sleep' },
-  { id: 'M26', title: 'Head + Shoulder Plant', description: '头疗+肩颈中草药 — Head therapy with herbal Chinese medicine shoulder care.', image: '', priceRange: { min: 1999, max: 1999 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'head-shoulder-plant', category: 'sleep' },
-  { id: 'P1', title: 'Foot + Ordinary Massage', description: '足底+全身指压 — Foot reflexology combined with full-body acupressure.', image: '', priceRange: { min: 1199, max: 1199 }, rating: 4.7, reviewCount: 0, duration: '90 min', slug: 'foot-ordinary-massage', category: 'sleep' },
-  { id: 'P2', title: 'Foot + Oil Massage', description: '足底+全身油压 — Foot reflexology combined with full-body oil massage.', image: '', priceRange: { min: 1699, max: 1699 }, rating: 4.7, reviewCount: 0, duration: '90 min', slug: 'foot-oil-massage', category: 'sleep' },
-  // PACKAGES
-  { id: 'L1', title: 'Body Massage + Cupping/Gua Sha', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1699, max: 1699 }, rating: 4.8, reviewCount: 0, duration: '80 min', slug: 'bogo-body-massage-cupping', category: 'packages' },
-  { id: 'L2', title: 'Hot Stone Massage + Aiju', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1799, max: 1799 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'bogo-hot-stone-aiju', category: 'packages' },
-  { id: 'L3', title: '⭐ Head + Shoulder + Shampoo + Facial + Mask + Hand', description: 'BOGO Package — Most Popular! Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1999, max: 1999 }, rating: 4.9, reviewCount: 0, duration: '100 min', slug: 'bogo-head-shoulder-facial', category: 'packages' },
-  { id: 'L4', title: 'Body Massage + Facial + Mask', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1899, max: 1899 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'bogo-body-facial-mask', category: 'packages' },
-  { id: 'L5', title: 'Body Massage + Shampoo', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1899, max: 1899 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'bogo-body-shampoo', category: 'packages' },
-  { id: 'L6', title: 'Facial Cleansing + UV Light', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1699, max: 1699 }, rating: 4.7, reviewCount: 0, duration: '60 min', slug: 'bogo-facial-uv', category: 'packages' },
-  { id: 'L7', title: 'Foot Spa + Foot Massage', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1799, max: 1799 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'bogo-foot-spa-massage', category: 'packages' },
-  { id: 'L8', title: 'Foot Spa + Foot Nail Color', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1899, max: 1899 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'bogo-foot-spa-nail', category: 'packages' },
-  { id: 'CP1', title: 'Body Massage + Foot Massage', description: 'Cheava Package — Full-body and foot massage combo.', image: '', priceRange: { min: 1499, max: 1499 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'cp-body-foot-massage', category: 'packages' },
-  { id: 'CP2', title: '⭐ Facial + Hand + Head + Shoulder + Shampoo', description: 'Cheava Package — Most Popular! Complete head-to-toe pampering bundle.', image: '', priceRange: { min: 1999, max: 1999 }, rating: 4.9, reviewCount: 0, duration: '90 min', slug: 'cp-facial-head-shoulder', category: 'packages' },
+  { id: 'K6', title: 'Signature Massage', description: '招牌按摩 — Signature massage. +30 min add-on available for ₱1,499.', image: '', priceRange: { min: 999, max: 999 }, rating: 4.7, reviewCount: 0, duration: '60 min', slug: 'signature-massage', category: 'detox' },
+  { id: 'K7', title: 'Shiatsu Massage', description: '指压按摩 — Classic acupressure massage for full-body relief. +30 min add-on available for ₱1,399.', image: '', priceRange: { min: 899, max: 899 }, rating: 4.7, reviewCount: 0, duration: '60 min', slug: 'shiatsu-massage', category: 'detox' },
+  { id: 'K8', title: 'Thai Massage', description: '泰式按摩 — Traditional Thai stretching and pressure massage.', image: '', priceRange: { min: 1199, max: 1199 }, rating: 4.7, reviewCount: 0, duration: '60 min', slug: 'thai-massage', category: 'detox' },
+  { id: 'K9', title: 'Body Massage with Moxibustion', description: '全身精油艾灸按摩 — Full-body massage infused with moxibustion.', image: '', priceRange: { min: 1299, max: 1299 }, rating: 4.8, reviewCount: 0, duration: '60 min', slug: 'body-massage-moxibustion', category: 'detox' },
+  { id: 'K10', title: 'Hot Stone Massage', description: '热石经络SPA — Hot stone SPA to balance energy channels.', image: '', priceRange: { min: 1699, max: 1699 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'hot-stone-massage', category: 'detox' },
+  { id: 'K11', title: 'Abdomen Massage with Aiju (Heat Therapy Machine)', description: '腹部艾灸推油 — Abdomen massage combined with Aiju heat therapy for warmth and flow.', image: '', priceRange: { min: 1000, max: 1000 }, rating: 4.8, reviewCount: 0, duration: '45 min', slug: 'abdomen-massage-aiju', category: 'detox' },
+  { id: 'K12', title: 'Head and Shoulder Massage with Shampoo', description: '头肩按摩含洗发 — Head and shoulder massage inclusive of shampoo for tension relief.', image: '', priceRange: { min: 1199, max: 1199 }, rating: 4.7, reviewCount: 0, duration: '60 min', slug: 'head-shoulder-massage-shampoo', category: 'detox' },
+  { id: 'K13', title: 'Head and Shoulder Massage with Shampoo + Hand Massage', description: '头肩按摩含洗发及手部护理 — Head and shoulder massage with shampoo and hand massage for full relief.', image: '', priceRange: { min: 1899, max: 1899 }, rating: 4.7, reviewCount: 0, duration: '90 min', slug: 'head-shoulder-massage-shampoo-hand-massage', category: 'detox' },
+  // ADD ONs
+  { id: 'C1', title: 'Aiju (Heat Therapy Machine)', description: '艾灸热疗 — Intensive heat therapy for deep muscle relaxation.', image: '', priceRange: { min: 399, max: 399 }, rating: 4.8, reviewCount: 0, duration: '20 min', slug: 'aiju', category: 'add-on' },
+  { id: 'C2', title: 'Scraping', description: '刮痧疗法 — Traditional scraping therapy for improved circulation.', image: '', priceRange: { min: 499, max: 499 }, rating: 4.8, reviewCount: 0, duration: '20 min', slug: 'scraping', category: 'add-on' },
+  { id: 'C3', title: 'Gua Sha', description: '刮痧排毒 — Gua Sha therapy for detoxification and muscle relief.', image: '', priceRange: { min: 499, max: 499 }, rating: 4.8, reviewCount: 0, duration: '20 min', slug: 'gua-sha', category: 'add-on' },
+  { id: 'C4', title: 'Chinese Cupping', description: '中式拔罐 — Traditional Chinese cupping therapy for muscle relief.', image: '', priceRange: { min: 499, max: 499 }, rating: 4.8, reviewCount: 0, duration: '20 min', slug: 'chinese-cupping', category: 'add-on' },
+  { id: 'C5', title: 'Beech Wood', description: '榉木按摩 — Premium beech wood tool for enhanced massage experience.', image: '', priceRange: { min: 499, max: 499 }, rating: 4.8, reviewCount: 0, duration: '20 min', slug: 'beech-wood', category: 'add-on' },
+  { id: 'C6', title: 'Gua Sha with Moxibustion', description: '刮痧艾灸结合 — Gua Sha combined with moxibustion for enhanced relief.', image: '', priceRange: { min: 599, max: 599 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: '30-min-add-on', category: 'add-on' },
+  { id: 'C7', title: 'Sauna', description: '桑拿浴 — Relaxing sauna session for detoxification and stress relief.', image: '', priceRange: { min: 599, max: 599 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'sauna', category: 'add-on' },
+  { id: 'C8', title: 'Shampoo', description: '专业洗发护理 — Professional shampoo service for a refreshing experience.', image: '', priceRange: { min: 699, max: 699 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'shampoo', category: 'add-on' },
+  { id: 'C9', title: 'Clean Ear', description: '耳部深层清洁 — Deep cleaning of the ears for a refreshed feeling.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'clean-ear', category: 'add-on' },
+  { id: 'C10', title: 'Shoulder Massage', description: '肩部按摩 — Targeted shoulder massage for relief from tension.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'shoulder-massage', category: 'add-on' },
+  { id: 'C11', title: 'Back Massage', description: '背部按摩 — Targeted back massage for relief from tension.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'back-massage', category: 'add-on' },
+  { id: 'C12', title: 'Head Massage', description: '头部按摩 — Targeted head massage for relief from tension.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'head-massage', category: 'add-on' },
+  { id: 'C13', title: 'Leg Massage (Prone or Supine)', description: '腿部按摩（俯卧或仰卧）— Targeted leg massage selected based on client preference.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'leg-massage', category: 'add-on' },
+  { id: 'C14', title: 'Kidney Massage', description: '肾部按摩调理 — Targeted kidney area massage for warmth and tension relief.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'kidney-massage', category: 'add-on' },
+  { id: 'C15', title: 'Breast Massage', description: '胸部疏通按摩 — Therapeutic breast massage for lymphatic flow and tension relief.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'breast-massage', category: 'add-on' },
+  { id: 'C16', title: 'Foot Massage', description: '足部按摩 — Targeted foot massage for relief from tension.', image: '', priceRange: { min: 799, max: 799 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: 'foot-massage', category: 'add-on' },
+  { id: 'C17', title: 'Body Scrub', description: '全身磨砂去角质 — Exfoliating body scrub for smooth and radiant skin.', image: '', priceRange: { min: 899, max: 899 }, rating: 4.8, reviewCount: 0, duration: '30 min', slug: '30-min-add-on', category: 'add-on' },
 ]
+  //   // PACKAGES
+//   { id: 'L1', title: 'Body Massage + Cupping/Gua Sha', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1699, max: 1699 }, rating: 4.8, reviewCount: 0, duration: '80 min', slug: 'bogo-body-massage-cupping', category: 'packages' },
+//   { id: 'L2', title: 'Hot Stone Massage + Aiju', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1799, max: 1799 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'bogo-hot-stone-aiju', category: 'packages' },
+//   { id: 'L3', title: '⭐ Head + Shoulder + Shampoo + Facial + Mask + Hand', description: 'BOGO Package — Most Popular! Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1999, max: 1999 }, rating: 4.9, reviewCount: 0, duration: '100 min', slug: 'bogo-head-shoulder-facial', category: 'packages' },
+//   { id: 'L4', title: 'Body Massage + Facial + Mask', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1899, max: 1899 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'bogo-body-facial-mask', category: 'packages' },
+//   { id: 'L5', title: 'Body Massage + Shampoo', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1899, max: 1899 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'bogo-body-shampoo', category: 'packages' },
+//   { id: 'L6', title: 'Facial Cleansing + UV Light', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1699, max: 1699 }, rating: 4.7, reviewCount: 0, duration: '60 min', slug: 'bogo-facial-uv', category: 'packages' },
+//   { id: 'L7', title: 'Foot Spa + Foot Massage', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1799, max: 1799 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'bogo-foot-spa-massage', category: 'packages' },
+//   { id: 'L8', title: 'Foot Spa + Foot Nail Color', description: 'BOGO Package — Buy 1 Get 1 Free for 2 people.', image: '', priceRange: { min: 1899, max: 1899 }, rating: 4.8, reviewCount: 0, duration: '', slug: 'bogo-foot-spa-nail', category: 'packages' },
+//   { id: 'CP1', title: 'Body Massage + Foot Massage', description: 'Cheava Package — Full-body and foot massage combo.', image: '', priceRange: { min: 1499, max: 1499 }, rating: 4.8, reviewCount: 0, duration: '90 min', slug: 'cp-body-foot-massage', category: 'packages' },
+//   { id: 'CP2', title: '⭐ Facial + Hand + Head + Shoulder + Shampoo', description: 'Cheava Package — Most Popular! Complete head-to-toe pampering bundle.', image: '', priceRange: { min: 1999, max: 1999 }, rating: 4.9, reviewCount: 0, duration: '90 min', slug: 'cp-facial-head-shoulder', category: 'packages' },
+// ]
 
 // ─── Category Config ───────────────────────────────────────────────────────────
 const categoryConfig: Record<string, { label: string; icon: string }> = {
-  fashion:      { label: 'Fashion Goddess', icon: '✦' },
-  skincare:     { label: 'Skin Care',        icon: '◈' },
-  detox:        { label: 'Detox & Warmth',   icon: '◉' },
-  vitality:     { label: 'Vitality',         icon: '◇' },
-  aromatherapy: { label: 'Aromatherapy',     icon: '❋' },
-  wellness:     { label: 'Wellness',         icon: '◎' },
-  sleep:        { label: 'Sleep & Calm',     icon: '◑' },
-  packages:     { label: 'Packages',         icon: '⬡' },
+  fashion: { label: 'Fashion Goddess', icon: '✦' },
+  skincare: { label: 'Skin Care', icon: '◈' },
+  detox: { label: 'Detox', icon: '◉' },
+  'add-on': { label: 'Add-On', icon: '◇' },
 }
 
 const catDescriptions: Record<string, string> = {
-  fashion: 'Nails & lashes', skincare: 'Glow & renewal', detox: 'Purify & release',
-  vitality: 'Energy & scrub', aromatherapy: 'Scent & massage', wellness: 'Body & balance',
-  sleep: 'Head & calm', packages: 'BOGO & bundles',
+  fashion: 'Nails & Treatment', skincare: 'Glow & renewal', detox: 'Purify & release', 'add-on': 'Extras', 
 }
 
 // ─── Card ─────────────────────────────────────────────────────────────────────
@@ -134,7 +115,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         <div className="svc-card__stars">
           {[...Array(5)].map((_, i) => (
             <Star key={i} size={11} style={{
-              fill:  i < Math.floor(service.rating) ? '#7A3828' : 'transparent',
+              fill: i < Math.floor(service.rating) ? '#7A3828' : 'transparent',
               color: i < Math.floor(service.rating) ? '#7A3828' : '#C8B4AA',
             }} />
           ))}
@@ -158,7 +139,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 type ActiveCategory = 'all' | string
 
 export default function ServicesPage() {
-  const [searchTerm, setSearchTerm]       = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
   const [activeCategory, setActiveCategory] = useState<ActiveCategory>('all')
 
   const categories = Array.from(new Set(allServices.map((s) => s.category)))
@@ -167,7 +148,7 @@ export default function ServicesPage() {
     const q = searchTerm.toLowerCase()
     return allServices.filter((s) => {
       const matchesSearch = !q || s.title.toLowerCase().includes(q) || s.description.toLowerCase().includes(q)
-      const matchesCat    = activeCategory === 'all' || s.category === activeCategory
+      const matchesCat = activeCategory === 'all' || s.category === activeCategory
       return matchesSearch && matchesCat
     })
   }, [searchTerm, activeCategory])
@@ -254,7 +235,7 @@ export default function ServicesPage() {
         .sp-cat-strip {
           display: grid;
           /* 9 columns: All + 8 categories */
-          grid-template-columns: repeat(9, 1fr);
+          grid-template-columns: repeat(5, 1fr);
           border-top: 1px solid var(--brand-b); border-bottom: 1px solid var(--brand-b);
           background: var(--surface-alt); overflow-x: auto;
         }
