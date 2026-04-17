@@ -3,14 +3,14 @@
 import Image from 'next/image'
 
 const treatments = [
-  { id: 1, duration: '60 MIN', name: 'Facial Cleansing + UV Light', price: '₱1,699', image: '/images/package6.jpg' },
-  { id: 2, duration: '90 MIN', name: 'Hot Stone Massage + Aiju', price: '₱1,799', image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80' },
-  { id: 3, duration: '', name: 'Foot Spa + Foot Nail Color', price: '₱1,899', image: '/images/package8.jpg' },
-  { id: 4, duration: '90 MIN', name: 'Foot Spa + Foot Massage', price: '₱1,799', image: '/images/package7.jpg' },
-  { id: 5, duration: '90 MIN', name: 'Body Massage + Shampoo', price: '₱1,899', image: 'https://images.unsplash.com/photo-1717160675643-53a7a2ebaa9f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-  { id: 6, duration: '80 MIN', name: 'Body Massage + Cupping or Gua Sha', price: '₱1,699', image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80' },
-  { id: 7, duration: '90 MIN', name: 'Body · Facial · Mask', price: '₱1,899', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-  { id: 8, duration: '100 MIN', name: 'Head & Shoulder · Facial · Mask · Hand', price: '₱1,999', image: 'https://plus.unsplash.com/premium_photo-1661505103296-a23f027f2dd1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { id: 1, duration: '60 MIN', name: 'Facial Cleansing + UV Light', price: '₱1,699', image: 'https://i.pinimg.com/1200x/19/15/be/1915be27b02504c58732ff278dad02f1.jpg' },
+  { id: 2, duration: '90 MIN', name: 'Hot Stone Massage + Aiju', price: '₱1,799', image: 'https://i.pinimg.com/1200x/40/54/ab/4054abe3db6553c8e9899ea11f05a693.jpg' },
+  { id: 3, duration: '', name: 'Foot Spa + Foot Nail Color', price: '₱1,899', image: 'https://i.pinimg.com/1200x/e3/d9/2b/e3d92b18f71ca73a8bc25fe28efb8db3.jpg' },
+  { id: 4, duration: '90 MIN', name: 'Body · Facial · Mask', price: '₱1,899', image: 'https://i.pinimg.com/1200x/14/0f/f0/140ff07410b143fa89ce087dccba5acd.jpg' },
+  { id: 5, duration: '90 MIN', name: 'Body Massage + Shampoo', price: '₱1,899', image: 'https://i.pinimg.com/1200x/4f/48/8e/4f488eeb9afda1b4d4fd587810a4fff3.jpg' },
+  { id: 6, duration: '80 MIN', name: 'Body Massage + Cupping or Gua Sha', price: '₱1,699', image: 'https://i.pinimg.com/1200x/4d/38/77/4d3877e949ce95b6a0a111259eebd5e6.jpg' },
+  { id: 7, duration: '90 MIN', name: 'Foot Spa + Foot Massage', price: '₱1,799', image: 'https://i.pinimg.com/1200x/74/4b/4f/744b4ff883455732163b02d2715f21af.jpg' },
+  { id: 8, duration: '100 MIN', name: 'Head & Shoulder · Facial · Mask · Hand', price: '₱1,999', image: 'https://i.pinimg.com/1200x/54/47/c5/5447c51a07db5ddab6da028df4237f57.jpg' },
 ]
 
 const layout = [
