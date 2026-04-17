@@ -12,20 +12,14 @@ function TikTokIcon({ size = 14 }: { size?: number }) {
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-[#fdf8f5] via-white to-[#f6e7df] text-spa-dark">
-
-      {/* soft luxury glow */}
       <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-gradient-to-br from-[#c97c5d]/10 via-transparent to-[#a65a3a]/10 blur-3xl rounded-full" />
       <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-gradient-to-tr from-rose-gold/10 via-transparent to-terra-cotta/10 blur-3xl rounded-full" />
 
-      {/* MAIN */}
       <div className="relative max-w-7xl mx-auto px-4 md:px-8 pt-14 pb-8">
-
-        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-10">
 
           {/* BRAND */}
           <div className="flex flex-col gap-4">
-
             <div className="flex items-center gap-3">
               <img
                 src="/hi-beauty-logo.png"
@@ -42,26 +36,6 @@ export function Footer() {
               </div>
             </div>
 
-            <p className="text-xs text-spa-dark/70 leading-relaxed max-w-[260px]">
-              Experience ultimate relaxation and wellness at Antel Spa Residences, Makati. Open late — every day.
-            </p>
-
-            {/* TRUST MICRO ROW */}
-            <div className="flex flex-wrap gap-4 text-xs text-spa-dark/60">
-              <span className="flex items-center gap-1">
-                <CheckCircle size={12} className="text-[#c97c5d]" />
-                Fast replies
-              </span>
-              <span className="flex items-center gap-1">
-                <CheckCircle size={12} className="text-[#c97c5d]" />
-                Private booking
-              </span>
-              <span className="flex items-center gap-1">
-                <CheckCircle size={12} className="text-[#c97c5d]" />
-                Trusted clients
-              </span>
-            </div>
-
             {/* SOCIALS */}
             <div className="flex items-center gap-2 pt-2">
               {[
@@ -69,7 +43,7 @@ export function Footer() {
                 { href: 'https://www.instagram.com/beautyasha888/', Icon: Instagram, label: 'Instagram' },
                 { href: 'https://www.tiktok.com/@hibeautyspa888', Icon: TikTokIcon, label: 'TikTok' },
               ].map(({ href, Icon, label }) => (
-                
+                <a
                   key={label}
                   href={href}
                   target="_blank"
@@ -90,12 +64,11 @@ export function Footer() {
             </p>
 
             <div className="space-y-3">
-
               <div className="flex gap-2">
                 <Phone size={13} className="text-[#c97c5d] mt-1" />
                 <div>
                   <p className="text-[10px] text-spa-dark/50 uppercase">Phone</p>
-                  
+                  <a
                     href="tel:+639684504504"
                     className="text-xs hover:text-[#c97c5d] transition"
                   >
@@ -108,7 +81,7 @@ export function Footer() {
                 <Instagram size={13} className="text-[#c97c5d] mt-1" />
                 <div>
                   <p className="text-[10px] text-spa-dark/50 uppercase">Instagram</p>
-                  
+                  <a
                     href="https://www.instagram.com/beautyasha888/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -123,7 +96,7 @@ export function Footer() {
                 <Facebook size={13} className="text-[#c97c5d] mt-1" />
                 <div>
                   <p className="text-[10px] text-spa-dark/50 uppercase">Facebook</p>
-                  
+                  <a
                     href="https://www.facebook.com/people/HI-BeautySPA/61564870212732/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -133,7 +106,6 @@ export function Footer() {
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -147,7 +119,7 @@ export function Footer() {
               <MapPin size={13} className="text-[#c97c5d] mt-1" />
               <div>
                 <p className="text-[10px] text-spa-dark/50 uppercase">Location</p>
-                
+                <a
                   href="https://maps.google.com/?q=4F+Antel+Spa+Residences+7829+Salamanca+Makati+City"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -157,30 +129,18 @@ export function Footer() {
                 </a>
               </div>
             </div>
-
-            <div className="flex gap-2">
-              <Clock size={13} className="text-[#c97c5d] mt-1" />
-              <div>
-                <p className="text-[10px] text-spa-dark/50 uppercase">Hours</p>
-                <p className="text-xs">2:00 PM – 2:00 AM</p>
-                <p className="text-[10px] text-spa-dark/50">Open daily</p>
-              </div>
-            </div>
-
           </div>
 
         </div>
 
         {/* BOTTOM BAR */}
         <div className="mt-12 pt-5 border-t border-spa-dark/10 flex flex-col md:flex-row items-center justify-between gap-3">
-
           <p className="text-[11px] text-spa-dark/50">
             © {new Date().getFullYear()} Hi Beauty Spa. All rights reserved.
           </p>
-
           <p className="text-[11px] text-spa-dark/50">
             Powered by{" "}
-            
+            <a
               href="https://www.infinitechphil.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -189,9 +149,7 @@ export function Footer() {
               INFINITECH ADVERTISING CORPORATION
             </a>
           </p>
-
         </div>
-
       </div>
     </footer>
   )
