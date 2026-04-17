@@ -218,9 +218,9 @@ export default function ContactPage() {
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 { icon: Phone, label: "Call Us", value: "0968 450 4504" },
-                { icon: MapPin, label: "Location", value: "Antel Spa Residences, Makati" },
+                { icon: MapPin, label: "Location", value: "4/F ,Antel Spa residences, 7829 salamanca makati city" },
                 { icon: Clock, label: "Open Daily", value: "2:00 PM – 2:00 AM" },
-                { icon: Mail, label: "Email", value: "hibeauty1188@gmail.com" },
+                { icon: Mail, label: "Email", value: "hibeautyspa81@gmail.com" },
               ].map(({ icon: Icon, label, value }, i) => (
                 <div key={i} className="p-6 rounded-2xl shadow-md hover:shadow-xl transition" style={{ background: BRAND.surface, border: `1px solid ${BRAND.border}` }}>
                   <Icon className="mb-3" style={{ color: BRAND.accent }} />
