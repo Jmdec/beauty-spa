@@ -4,6 +4,7 @@ import { PopularTreatments  } from '@/components/sections/ServicesSection'
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
 
 import { CtaSection } from '@/components/sections/CtaSection'
+import IntroVideoSection from '../components/sections/IntroVideoSectin'
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <HeroSection />
 
       <PopularTreatments  />
+      <IntroVideoSection />
       <TestimonialsSection />
 
       <CtaSection />
